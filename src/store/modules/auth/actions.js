@@ -14,7 +14,7 @@ export default {
     })    
   },
   async auth(context, payload) {
-    const API_KEY = 'AIzaSyCg_p59RJDUPad9fWyInF_D15CMSeihlCs';
+    const API_KEY = process.env.VUE_APP_GOOGLE_API_KEY;
     let authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
     if(payload.mode === 'signup') {
       authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`
